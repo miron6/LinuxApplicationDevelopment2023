@@ -1,0 +1,6 @@
+== Usage example
+
+[source,bash]
+----
+LC_ALL=EN cal | ./randomize.sh 0.01
+----
