@@ -12,7 +12,6 @@
 
 size_t getlinewrap(char **line) {
 #ifdef READLINE
-	printf("	test");
 	if (*line) {
 		free(*line);
 	}
@@ -45,7 +44,7 @@ int calc_hash(char *message, char *result, unsigned int hash_id, int enc) {
 }
 
 int main(int argc, char **argv) {
-    rhash_library_init();
+	rhash_library_init();
 	char *input = NULL;
 	printf("> ");
 	while (getlinewrap(&input) != -1) {
