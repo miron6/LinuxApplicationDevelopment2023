@@ -13,7 +13,6 @@
 
 size_t getlinewrap(char **line) {
 #ifdef READLINE
-	printf("HUI");
 	if (*line) {
 		free(*line);
 	}
