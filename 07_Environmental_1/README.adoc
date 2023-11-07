@@ -1,0 +1,22 @@
+= RHaser
+
+== Requirements
+
+    * https://github.com/rhash/RHash/tree/master[RHash]
+    * https://tiswww.case.edu/php/chet/readline/rltop.html[readline]
+
+== Build
+
+    $ autoreconf -fisv && ./configure && make
+
+If you want to use `readline` instead of `getline`
+
+    $ autoreconf -fisv && ./configure --enable-readline && make
+
+== Run tests
+
+    $ make test
+
+== Clean generates
+
+    $ make clean
