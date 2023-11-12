@@ -1,0 +1,15 @@
+= Predictor
+
+== Build
+
+    $ autoreconf -fisv && ./configure && make && make locale
+
+== Usage
+
+With english LOCALE
+
+    $ LANGUAGE=en_US:en ./predictor
+
+With russian locale
+
+    $ LANGUAGE=ru_RU.UTF-8:ru ./predictor
