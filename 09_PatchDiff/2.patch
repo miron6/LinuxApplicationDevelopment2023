@@ -1,0 +1,60 @@
+--- maze.c	2023-11-23 02:47:22.853406375 +0300
++++ maze2.c	2023-11-23 03:04:55.806518150 +0300
+@@ -9,9 +9,9 @@
+ #define SOUTH 2
+ #define WEST 3
+ 
+-void init_maze(int w, int h, char *grid) {
++void init_maze(int w, int h, char *grid, char wall) {
+     for (int i=0; i < w * h; i++) {
+-        grid[i] = '#';
++        grid[i] = wall;
+     }
+ }
+ 
+@@ -29,8 +29,8 @@
+     return 1;
+ }
+ 
+-void visit(int x, int y, char *grid, int w, int h) {
+-    grid[xy_to_flat(x, y, w)] = '.';
++void visit(int x, int y, char *grid, int w, int h, char pass, char wall) {
++    grid[xy_to_flat(x, y, w)] = pass;
+     int dirs[4];
+     dirs[0] = NORTH;
+     dirs[1] = EAST;
+@@ -62,21 +62,27 @@
+         int x2 = x + (dx<<1);
+         int y2 = y + (dy<<1);
+         if (in_bounds(x2, y2, w, h)) {
+-            if (grid[xy_to_flat(x2, y2, w)] == '#') {
+-                grid[xy_to_flat(x2 - dx, y2 - dy, w) ] = '.';
+-                visit(x2, y2, grid, w, h);
++            if (grid[xy_to_flat(x2, y2, w)] == wall) {
++                grid[xy_to_flat(x2 - dx, y2 - dy, w) ] = pass;
++                visit(x2, y2, grid, w, h, pass, wall);
+             }
+         }
+     }
+ }
+ 
+ int main(int argc, char **argv) {
+-    int w = 13;
+-    int h = 13;
++    if (argc < 3) {
++        return 1;
++    }
++    char pass = argv[1][0];
++    char wall = argv[1][1];
++    int N = atoi(argv[2]);
++    int w = N * 2 + 1;
++    int h = N * 2 + 1;
+     char grid[w * h];
+     srand(time(0));
+-    init_maze(w, h, grid);
+-    visit(1, 1, grid, w, h);
++    init_maze(w, h, grid, wall);
++    visit(1, 1, grid, w, h, pass, wall);
+     for (int y = 0; y < h; y++) {
+         for (int x = 0; x < w; x++) {
+             printf("%c", (char)grid[xy_to_flat(x, y, w)]);

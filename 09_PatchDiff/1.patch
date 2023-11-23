@@ -1,0 +1,17 @@
+--- maze.c	2023-11-23 02:47:22.853406375 +0300
++++ maze1.c	2023-11-23 03:02:56.106367960 +0300
+@@ -71,8 +71,12 @@
+ }
+ 
+ int main(int argc, char **argv) {
+-    int w = 13;
+-    int h = 13;
++    if (argc < 2) {
++        return 1;
++    }
++    int N = atoi(argv[1]);
++    int w = N * 2 + 1;
++    int h = N * 2 + 1;
+     char grid[w * h];
+     srand(time(0));
+     init_maze(w, h, grid);
