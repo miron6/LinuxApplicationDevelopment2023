@@ -1,0 +1,19 @@
+= Lib buf
+
+== Build
+
+    $ autoreconf -fisv && ./configure --enable-gcov && make
+
+== Usage
+
+Get `gcov` report with reporting uncodered lines
+
+    $ make gcov
+
+Get `gcov` JSON report
+
+    $ make gcov-json
+
+Get `gcov` simple report
+
+    $ make gcov-simple
