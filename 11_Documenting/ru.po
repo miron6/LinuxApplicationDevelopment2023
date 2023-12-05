@@ -1,0 +1,95 @@
+# Russian translations for LinuxApplicationDevelopment package
+# Английские переводы для пакета LinuxApplicationDevelopment.
+# Copyright (C) 2023 THE LinuxApplicationDevelopment'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the LinuxApplicationDevelopment package.
+# miron <predictor@nonext.xxx>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: LinuxApplicationDevelopment 2023\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-06 00:39+0300\n"
+"PO-Revision-Date: 2023-12-06 00:40+0300\n"
+"Last-Translator: miron <predictor@nonext.xxx>\n"
+"Language-Team: Russian <gnu@d07.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: predictor.c:21
+msgid ""
+"predictor is an oracle that magically predicts the number you have chosen "
+"from 1 to 100\n"
+"\n"
+"Usage: predictor [OPTIONS]\n"
+"\n"
+"    --help, -h      show this message\n"
+"    --vesrion, -v   print version\n"
+"    --roman, -r     use roman numbers\n"
+"\n"
+msgstr ""
+"предсказатель это некий оракул, который магическим образом угадывает загаданное вами число "
+"из диапазона от 1 до 100\n"
+"\n"
+"Иcпользование: predictor [ОПЦИИ]\n"
+"\n"
+"    --help, -h      показать это сообщение\n"
+"    --vesrion, -v   показать версиб\n"
+"    --roman, -r     использовать римские числа\n"
+"\n"
+
+#: predictor.c:89
+#, c-format
+msgid "Guess the number between %s and %s\n"
+msgstr "Загадайте число от %s до %s\n"
+
+#: predictor.c:91
+#, c-format
+msgid "Guess the number between 0 and 100\n"
+msgstr "Загадайте число от 0 до 100\n"
+
+#: predictor.c:96
+#, c-format
+msgid "Is your number greater then %s? [Yes/No]\n"
+msgstr "Ваше число больше чем %s? [да/нет]\n"
+
+#: predictor.c:98
+#, c-format
+msgid "Is your number greater then %d? [Yes/No]\n"
+msgstr "Ваше число больше чем %d? [да/нет]\n"
+
+#. unfortunately, `strcasecmp` can not work with multibytes symbs (e.g. UTF-8)
+#. so in ru locale user must enter only lowercase answers
+#: predictor.c:104
+msgid "yes"
+msgstr "да"
+
+#: predictor.c:104
+msgid "y"
+msgstr "д"
+
+#: predictor.c:107
+msgid "no"
+msgstr "нет"
+
+#: predictor.c:107
+msgid "n"
+msgstr "н"
+
+#: predictor.c:111
+#, c-format
+msgid "Don't understand you... Answer [Yes] or [No]\n"
+msgstr "Некорректный ввод. Ответьте [да] или [нет]\n"
+
+#: predictor.c:116
+#, c-format
+msgid "I guess your number is %s\n"
+msgstr "Загаданное вами число %s\n"
+
+#: predictor.c:118
+#, c-format
+msgid "I guess your number is %d\n"
+msgstr "Загаданное вами число %d\n"

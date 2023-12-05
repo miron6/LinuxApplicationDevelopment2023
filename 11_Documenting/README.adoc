@@ -1,0 +1,35 @@
+= Predictor
+
+== Build
+
+    $ autoreconf -fisv && ./configure && make
+
+== Usage
+
+With english LOCALE
+
+    $ LANGUAGE=en_US:en ./predictor
+
+With russian locale
+
+    $ LANGUAGE=ru_RU.UTF-8:ru ./predictor
+
+To use roman numbers
+
+    $ ./predictor -r
+
+== Docs
+
+See man
+
+    $ man ./predictor.1
+
+See web docs
+
+    $ make web-doc
+
+By default `firefox` browser is using
+
+== Clean
+
+    $ make gitclean
